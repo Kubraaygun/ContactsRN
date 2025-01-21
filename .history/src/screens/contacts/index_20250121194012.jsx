@@ -66,12 +66,12 @@ const Contacts = () => {
       <TouchableOpacity
         onPress={() =>
           addNewContact(
-            'Yasin',
-            'Yilmaz',
-            '5452524342424',
-            'yasin@yasin.com',
-            'Adana',
-            'softrawe Developer',
+            'asli',
+            'tekin',
+            '33333a33',
+            'kubraaygun@ads.com',
+            'Adres asdreadsa dsa',
+            'softrawe',
           )
         }
         style={{

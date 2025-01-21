@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import SQLite from 'react-native-sqlite-storage';
 import Icon from '@react-native-vector-icons/evil-icons';
-import ContackItem from '../../components/contacts/contactItem';
 const db = SQLite.openDatabase({
   name: 'ContactsDatabase',
 });
@@ -38,17 +37,14 @@ const Contacts = () => {
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
         console.log('gelen veri', res.rows.length);
-        if (res.rows.length > 0) {
-          let users = [];
+        if (res.rows.length > 0)
+          let users=[]
           for (let i = 0; i < res.rows.length; i++) {
             let item = res.rows.item(i);
-            console.log(item);
-            users.push(item);
+            users.push(item)
           }
-          setUsers(users);
-        }
-
-        error => console.log('hata', error.message);
+        setUsers(users);
+          error => console.log('hata', error.message);
       });
     });
   };
@@ -61,17 +57,17 @@ const Contacts = () => {
     <View style={defaultScreenStyle.container}>
       <FlatList
         data={users}
-        renderItem={({item}) => <ContackItem item={item} />}
+        renderItem={({item}) => <Text>{item.name}</Text>}
       />
       <TouchableOpacity
         onPress={() =>
           addNewContact(
-            'Yasin',
-            'Yilmaz',
-            '5452524342424',
-            'yasin@yasin.com',
-            'Adana',
-            'softrawe Developer',
+            'awdaw',
+            'Aygn',
+            '33333a33',
+            'kubraaygun@ads.com',
+            'Adres asdreadsa dsa',
+            'softrawe',
           )
         }
         style={{

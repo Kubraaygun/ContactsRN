@@ -3,30 +3,29 @@ import React, {useEffect, useState} from 'react';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import SQLite from 'react-native-sqlite-storage';
 import Icon from '@react-native-vector-icons/evil-icons';
-import ContackItem from '../../components/contacts/contactItem';
 const db = SQLite.openDatabase({
   name: 'ContactsDatabase',
 });
 
 const Contacts = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState();
   const createContactsTable = () => {
     db.transaction(txn => {
       txn.executeSql(
-        'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(100), surname VARCHAR(500), phone INTEGER, email VARCHAR(500), adress VARCHAR(500), job VARCHAR(500))',
+        'CREATE TABLE IF NOT EXISTS users   (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(100), surname VARCHAR(500), phone INTEGER, email name VARCHAR(500), adress name VARCHAR(500), job name VARCHAR(500))',
         [],
         (sqlTxn, res) => console.log('Table created'),
         error => console.log('hata', error.message),
       );
     });
   };
-  const addNewContact = (name, surname, phone, email, adress, job) => {
+  const AddNewContack = (name, surname, phone, email, adress, job) => {
     db.transaction(txn => {
       txn.executeSql(
         'INSERT INTO users (name, surname, phone, email, adress, job) VALUES (?,?,?,?,?,?)',
         [name, surname, phone, email, adress, job],
         (sqlTxn, res) => {
-          console.log('New contact inserted');
+          console.log('New contact inserted', res.insertId);
           getContacts();
         },
         error => console.log('hata', error.message),
@@ -38,17 +37,13 @@ const Contacts = () => {
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
         console.log('gelen veri', res.rows.length);
-        if (res.rows.length > 0) {
-          let users = [];
+        if (res.rows.length > 0)
           for (let i = 0; i < res.rows.length; i++) {
             let item = res.rows.item(i);
-            console.log(item);
-            users.push(item);
+            setUsers([...users, item]);
           }
-          setUsers(users);
-        }
-
-        error => console.log('hata', error.message);
+        console.log('gelen veriler', res.rows),
+          error => console.log('hata', error.message);
       });
     });
   };
@@ -61,24 +56,24 @@ const Contacts = () => {
     <View style={defaultScreenStyle.container}>
       <FlatList
         data={users}
-        renderItem={({item}) => <ContackItem item={item} />}
+        renderItem={({item}) => <Text>{item.name}</Text>}
       />
       <TouchableOpacity
         onPress={() =>
-          addNewContact(
-            'Yasin',
-            'Yilmaz',
-            '5452524342424',
-            'yasin@yasin.com',
-            'Adana',
-            'softrawe Developer',
+          AddNewContack(
+            'Kubra',
+            'Aygn',
+            '3333333',
+            'kubraaygun@ads',
+            'Adres asdreadsa dsa',
+            'softrawe',
           )
         }
         style={{
           position: 'absolute',
           right: 20,
           bottom: 20,
-          backgroundColor: 'green',
+          backgroundColor: 'white',
           borderRadius: 50,
           padding: 20,
         }}>
