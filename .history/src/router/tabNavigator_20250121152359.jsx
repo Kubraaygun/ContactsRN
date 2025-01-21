@@ -12,11 +12,7 @@ export default function Tabnavigator() {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
-        tabBarIcon: ({focused, size, color}) => (
-          <TabBarIcon name={route.name} color={color} size={size} />
-        ),
-        tabBarActiveTintColor: '#344CB7',
-        tabBarInactiveTintColor: '#7E99A3',
+        tabBarIcon: ({focused, size, color}) => <TabBarIcon />,
       })}>
       <Tab.Screen name={RESENTS} component={Resents} />
       <Tab.Screen name={CONTACTS} component={Contacts} />

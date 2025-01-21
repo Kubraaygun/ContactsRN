@@ -6,7 +6,7 @@ const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator>
       <Stack.Screen name={TABBAVIGATOR} component={Tabnavigator} />
     </Stack.Navigator>
   );

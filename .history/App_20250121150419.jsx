@@ -1,6 +1,7 @@
 //import liraries
 import {NavigationContainer} from '@react-navigation/native';
-import React from 'react';
+import React, {Component} from 'react';
+
 import RootNavigator from './src/router/rootNavigator';
 
 // create a component
