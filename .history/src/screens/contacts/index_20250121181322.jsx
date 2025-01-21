@@ -21,12 +21,6 @@ const Contacts = () => {
   const getContacts = () => {
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
-        console.log('gelen veri', res.rows.length);
-        if (res.rows.length > 0)
-          for (let i = 0; i < res.rows.length; i++) {
-            let item = res.rows.item(i);
-            setUsers([...users, item]);
-          }
         console.log('gelen veriler', res.rows),
           error => console.log('hata', error.message);
       });

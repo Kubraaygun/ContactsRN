@@ -7,7 +7,7 @@ import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 const Resents = () => {
   return (
     <View style={defaultScreenStyle.container}>
-      <Text>resents</Text>
+      <Text>MyComponent</Text>
     </View>
   );
 };
