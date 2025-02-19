@@ -4,7 +4,7 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import Avatar from '../../components/contacts/avatar';
 import {convertFullName} from '../../utils/function';
-import {height, sizes, width} from '../../utils/contants';
+import {height, width} from '../../utils/contants';
 import {Colors} from '../../theme/colors';
 
 // create a component
@@ -15,11 +15,7 @@ const ContactDetail = ({route}) => {
     <View style={defaultScreenStyle.container}>
       <ScrollView>
         <View style={styles.userContainer}>
-          <Avatar
-            name={contact?.name}
-            surname={contact?.surname}
-            size={sizes.LARGE}
-          />
+          <Avatar name={contact?.name} surname={contact?.surname} />
           <Text style={styles.fullName}>
             {convertFullName(contact?.name, contact?.surname)}
           </Text>

@@ -4,7 +4,7 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import Avatar from '../../components/contacts/avatar';
 import {convertFullName} from '../../utils/function';
-import {height, sizes, width} from '../../utils/contants';
+import {height, width} from '../../utils/contants';
 import {Colors} from '../../theme/colors';
 
 // create a component

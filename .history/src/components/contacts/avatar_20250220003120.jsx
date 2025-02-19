@@ -3,37 +3,19 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {getInitials} from '../../utils/function';
 import {Colors} from '../../theme/colors';
-import {height, sizes, width} from '../../utils/contants';
+import {sizes} from '../../utils/contants';
 
 // create a component
 const Avatar = ({name, surname, size = sizes.MEDIUM}) => {
   const setSize = () => {
     switch (size) {
-      case sizes.SMALL:
-        return {
-          width: width * 0.1,
-          height: width * 0.1,
-        };
-      case sizes.MEDIUM:
-        return {
-          width: width * 0.2,
-          height: width * 0.2,
-        };
-      case sizes.LARGE:
-        return {
-          width: width * 0.3,
-          height: width * 0.3,
-        };
+      case value:
 
       default:
-        return {
-          width: width * 0.2,
-          height: width * 0.2,
-        };
     }
   };
   return (
-    <View style={[styles.container, setSize()]}>
+    <View style={styles.container}>
       <Text style={styles.name}>{getInitials(name, surname)}</Text>
     </View>
   );

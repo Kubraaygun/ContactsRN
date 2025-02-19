@@ -12,28 +12,24 @@ const Avatar = ({name, surname, size = sizes.MEDIUM}) => {
       case sizes.SMALL:
         return {
           width: width * 0.1,
-          height: width * 0.1,
+          height: height * 0.1,
         };
       case sizes.MEDIUM:
         return {
-          width: width * 0.2,
-          height: width * 0.2,
+          width: width * 0.1,
+          height: height * 0.1,
         };
       case sizes.LARGE:
         return {
-          width: width * 0.3,
-          height: width * 0.3,
+          width: width * 0.1,
+          height: height * 0.1,
         };
 
       default:
-        return {
-          width: width * 0.2,
-          height: width * 0.2,
-        };
     }
   };
   return (
-    <View style={[styles.container, setSize()]}>
+    <View style={styles.container}>
       <Text style={styles.name}>{getInitials(name, surname)}</Text>
     </View>
   );
