@@ -12,7 +12,7 @@ const ContackItem = ({item}) => {
   const navigation = useNavigation();
   return (
     <Pressable
-      onPress={() => navigation.navigate(CONTACTDETAIL, {contact: item})}
+      onPress={() => navigation.navigate(CONTACTDETAIL)}
       style={styles.container}>
       <View style={styles.avatarContainer}>
         <Avatar name={item.name} surname={item.surname} />

@@ -2,7 +2,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {CONTACTDETAIL, TABBAVIGATOR} from '../utils/routes';
 import Tabnavigator from './tabNavigator';
 import ContactDetail from '../screens/contacts/contactDetail';
-import {Colors} from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
 

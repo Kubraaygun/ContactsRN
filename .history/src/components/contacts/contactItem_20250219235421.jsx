@@ -5,15 +5,12 @@ import {convertFullName} from '../../utils/function';
 import {Colors} from '../../theme/colors';
 import Avatar from './avatar';
 import {useNavigation} from '@react-navigation/native';
-import {CONTACTDETAIL} from '../../utils/routes';
 
 // create a component
 const ContackItem = ({item}) => {
   const navigation = useNavigation();
   return (
-    <Pressable
-      onPress={() => navigation.navigate(CONTACTDETAIL, {contact: item})}
-      style={styles.container}>
+    <Pressable style={styles.container}>
       <View style={styles.avatarContainer}>
         <Avatar name={item.name} surname={item.surname} />
       </View>

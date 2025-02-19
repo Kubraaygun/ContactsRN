@@ -2,14 +2,12 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {CONTACTDETAIL, TABBAVIGATOR} from '../utils/routes';
 import Tabnavigator from './tabNavigator';
 import ContactDetail from '../screens/contacts/contactDetail';
-import {Colors} from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Stack.Navigator
-      screenOptions={{headerBackTitle: 'Back', headerTintColor: Colors.BLACK}}>
+    <Stack.Navigator>
       <Stack.Screen
         options={{headerShown: false}}
         name={TABBAVIGATOR}
