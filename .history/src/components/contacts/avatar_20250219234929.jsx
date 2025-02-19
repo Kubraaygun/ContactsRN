@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
     height: 55,
   },
   name: {
-    color: Colors.BLACK,
+    color: Colors.WHITE,
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 20,
   },
 });
 
