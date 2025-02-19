@@ -4,12 +4,10 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import Avatar from '../../components/contacts/avatar';
 import {convertFullName} from '../../utils/function';
-import {height} from '../../utils/contants';
 
 // create a component
 const ContactDetail = ({route}) => {
   const {contact} = route.params;
-  console.log(height);
   return (
     <View style={defaultScreenStyle.container}>
       <ScrollView>
