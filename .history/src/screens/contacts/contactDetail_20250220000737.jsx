@@ -4,13 +4,10 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 
 // create a component
-const ContactDetail = ({route}) => {
-  const {contact} = route.params;
+const ContactDetail = () => {
   return (
     <View style={defaultScreenStyle.container}>
-      <ScrollView>
-        <Text>{contact.name}</Text>
-      </ScrollView>
+      <ScrollView></ScrollView>
     </View>
   );
 };

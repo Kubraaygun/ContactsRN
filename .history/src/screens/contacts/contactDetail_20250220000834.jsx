@@ -5,7 +5,7 @@ import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 
 // create a component
 const ContactDetail = ({route}) => {
-  const {contact} = route.params;
+  const contact = route.params.contact;
   return (
     <View style={defaultScreenStyle.container}>
       <ScrollView>
