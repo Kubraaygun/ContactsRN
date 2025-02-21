@@ -52,8 +52,8 @@ const ContactDetail = ({route}) => {
             <Text style={styles.info}>{contact.name}</Text>
           </View>
           <View style={styles.infoContainer}>
-            <Text style={styles.infoTitle}>Surname</Text>
-            <Text style={styles.info}>{contact.surname}</Text>
+            <Text style={styles.infoTitle}>Phone</Text>
+            <Text style={styles.info}>{contact.phone}</Text>
           </View>
           <View style={styles.infoContainer}>
             <Text style={styles.infoTitle}>Phone</Text>

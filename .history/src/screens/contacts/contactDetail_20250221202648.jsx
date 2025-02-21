@@ -45,31 +45,10 @@ const ContactDetail = ({route}) => {
             color={Colors.BLUE}
           />
         </View>
-
         <View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.infoTitle}>Name</Text>
-            <Text style={styles.info}>{contact.name}</Text>
-          </View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.infoTitle}>Surname</Text>
-            <Text style={styles.info}>{contact.surname}</Text>
-          </View>
           <View style={styles.infoContainer}>
             <Text style={styles.infoTitle}>Phone</Text>
             <Text style={styles.info}>{contact.phone}</Text>
-          </View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.infoTitle}>Email</Text>
-            <Text style={styles.info}>{contact.email}</Text>
-          </View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.infoTitle}>Adress</Text>
-            <Text style={styles.info}>{contact.adress}</Text>
-          </View>
-          <View style={styles.infoContainer}>
-            <Text style={styles.infoTitle}>Job</Text>
-            <Text style={styles.info}>{contact.job}</Text>
           </View>
         </View>
       </ScrollView>
@@ -107,14 +86,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   infoTitle: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '500',
     color: Colors.GRAY,
-  },
-  info: {
-    color: Colors.BLACK,
-    fontSize: 16,
-    marginTop: 5,
   },
 });
 
