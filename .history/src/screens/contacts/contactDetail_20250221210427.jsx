@@ -42,7 +42,7 @@ const ContactDetail = ({route, navigation}) => {
             color={Colors.PURPLE}
           />
           <CircleIconButton
-            onPress={() => navigation.navigate(CALLING, {contact: contact})}
+            onPress={() => navigation.navigate(CALLING, {contact})}
             icon={<Icon name="call" size={26} color={Colors.WHITE} />}
             color={Colors.BLUE}
           />

@@ -4,7 +4,6 @@ import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import SQLite from 'react-native-sqlite-storage';
 import Icon from '@react-native-vector-icons/evil-icons';
 import ContackItem from '../../components/contacts/contactItem';
-
 const db = SQLite.openDatabase({
   name: 'ContactsDatabase',
 });

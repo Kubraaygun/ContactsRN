@@ -30,7 +30,6 @@ const Calling = ({route, navigation}) => {
           color={Colors.RED}
         />
         <CircleIconButton
-          onPress={() => navigation.goBack()}
           icon={<Icon name="call" size={28} color={Colors.WHITE} />}
           color={Colors.GREEN}
         />

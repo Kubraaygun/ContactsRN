@@ -8,7 +8,6 @@ import {height, sizes, width} from '../../utils/contants';
 import {Colors} from '../../theme/colors';
 import CircleIconButton from '../../components/ui/circleIconButton';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {CALLING, CONTACTS} from '../../utils/routes';
 
 // create a component
 const ContactDetail = ({route, navigation}) => {
@@ -42,7 +41,7 @@ const ContactDetail = ({route, navigation}) => {
             color={Colors.PURPLE}
           />
           <CircleIconButton
-            onPress={() => navigation.navigate(CALLING, {contact: contact})}
+            onPres
             icon={<Icon name="call" size={26} color={Colors.WHITE} />}
             color={Colors.BLUE}
           />

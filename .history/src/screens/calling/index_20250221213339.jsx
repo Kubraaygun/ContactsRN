@@ -8,7 +8,7 @@ import {Colors} from '../../theme/colors';
 import CircleIconButton from '../../components/ui/circleIconButton';
 import Icon from 'react-native-vector-icons/Ionicons';
 // create a component
-const Calling = ({route, navigation}) => {
+const Calling = ({route}) => {
   const {contact} = route.params;
   return (
     <View style={styles.container}>
@@ -24,16 +24,8 @@ const Calling = ({route, navigation}) => {
       </View>
 
       <View style={styles.buttons}>
-        <CircleIconButton
-          onPress={() => navigation.goBack()}
-          icon={<Icon name="call" size={28} color={Colors.WHITE} />}
-          color={Colors.RED}
-        />
-        <CircleIconButton
-          onPress={() => navigation.goBack()}
-          icon={<Icon name="call" size={28} color={Colors.WHITE} />}
-          color={Colors.GREEN}
-        />
+        <CircleIconButton color={Colors.RED} />
+        <CircleIconButton icon={<Icon />} color={Colors.GREEN} />
       </View>
     </View>
   );
@@ -56,7 +48,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-evenly',
     flexDirection: 'row',
-    alignItems: 'center',
   },
   infoContainer: {
     flex: 2,

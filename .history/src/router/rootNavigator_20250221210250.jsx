@@ -17,11 +17,7 @@ export default function RootNavigator() {
         component={Tabnavigator}
       />
       <Stack.Screen name={CONTACTDETAIL} component={ContactDetail} />
-      <Stack.Screen
-        options={{headerShown: false}}
-        name={CALLING}
-        component={Calling}
-      />
+      <Stack.Screen name={CALLING} component={Calling} />
     </Stack.Navigator>
   );
 }
