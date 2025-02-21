@@ -6,7 +6,6 @@ import {Colors} from '../../theme/colors';
 import Avatar from './avatar';
 import {useNavigation} from '@react-navigation/native';
 import {CONTACTDETAIL} from '../../utils/routes';
-import {sizes} from '../../utils/contants';
 
 // create a component
 const ContackItem = ({item}) => {

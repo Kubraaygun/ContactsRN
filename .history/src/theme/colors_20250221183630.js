@@ -4,6 +4,4 @@ export const Colors = {
   GRAY: '#686D76',
   SOFTGRAY: '#D9EAFD',
   GREEN: '#51d774',
-  PURPLE: '#695aec',
-  BLUE: '#0991fd',
 };

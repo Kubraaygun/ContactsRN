@@ -28,8 +28,8 @@ const ContactDetail = ({route}) => {
         </View>
         <View style={styles.buttonContainer}>
           <CircleIconButton color={Colors.GREEN} />
-          <CircleIconButton color={Colors.PURPLE} />
-          <CircleIconButton color={Colors.BLUE} />
+          <CircleIconButton />
+          <CircleIconButton />
         </View>
       </ScrollView>
     </View>

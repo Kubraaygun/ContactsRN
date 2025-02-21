@@ -6,7 +6,6 @@ import Avatar from '../../components/contacts/avatar';
 import {convertFullName} from '../../utils/function';
 import {height, sizes, width} from '../../utils/contants';
 import {Colors} from '../../theme/colors';
-import CircleIconButton from '../../components/ui/circleIconButton';
 
 // create a component
 const ContactDetail = ({route}) => {
@@ -16,20 +15,15 @@ const ContactDetail = ({route}) => {
     <View style={defaultScreenStyle.container}>
       <ScrollView>
         <View style={styles.userContainer}>
-          <Avatar
-            name={contact?.name}
-            surname={contact?.surname}
-            size={sizes.LARGE}
-          />
+          <Avatar name={contact?.name} surname={contact?.surname} />
           <Text style={styles.fullName}>
             {convertFullName(contact?.name, contact?.surname)}
           </Text>
           <Text style={styles.job}>{contact?.job}</Text>
         </View>
         <View style={styles.buttonContainer}>
-          <CircleIconButton color={Colors.GREEN} />
-          <CircleIconButton color={Colors.PURPLE} />
-          <CircleIconButton color={Colors.BLUE} />
+          <Avatar name={contact?.name} surname={contact?.surname} />
+          <Text>{convertFullName(contact?.name, contact?.surname)}</Text>
         </View>
       </ScrollView>
     </View>
@@ -40,14 +34,13 @@ const ContactDetail = ({route}) => {
 const styles = StyleSheet.create({
   userContainer: {
     alignItems: 'center',
-    height: height * 0.2,
+    height: height * 0.15,
     justifyContent: 'center',
   },
   buttonContainer: {
     alignItems: 'center',
-    height: height * 0.1,
-    justifyContent: 'space-evenly',
-    flexDirection: 'row',
+    height: height * 0.15,
+    backgroundColor: 'gray',
   },
   fullName: {
     fontSize: 18,

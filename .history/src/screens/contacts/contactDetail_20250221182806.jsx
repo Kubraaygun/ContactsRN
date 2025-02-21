@@ -27,9 +27,9 @@ const ContactDetail = ({route}) => {
           <Text style={styles.job}>{contact?.job}</Text>
         </View>
         <View style={styles.buttonContainer}>
-          <CircleIconButton color={Colors.GREEN} />
-          <CircleIconButton color={Colors.PURPLE} />
-          <CircleIconButton color={Colors.BLUE} />
+          <CircleIconButton />
+          <CircleIconButton />
+          <CircleIconButton />
         </View>
       </ScrollView>
     </View>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     alignItems: 'center',
     height: height * 0.1,
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     flexDirection: 'row',
   },
   fullName: {

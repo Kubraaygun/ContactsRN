@@ -6,7 +6,6 @@ import Avatar from '../../components/contacts/avatar';
 import {convertFullName} from '../../utils/function';
 import {height, sizes, width} from '../../utils/contants';
 import {Colors} from '../../theme/colors';
-import CircleIconButton from '../../components/ui/circleIconButton';
 
 // create a component
 const ContactDetail = ({route}) => {
@@ -26,11 +25,7 @@ const ContactDetail = ({route}) => {
           </Text>
           <Text style={styles.job}>{contact?.job}</Text>
         </View>
-        <View style={styles.buttonContainer}>
-          <CircleIconButton color={Colors.GREEN} />
-          <CircleIconButton color={Colors.PURPLE} />
-          <CircleIconButton color={Colors.BLUE} />
-        </View>
+        <View style={styles.buttonContainer}></View>
       </ScrollView>
     </View>
   );
@@ -46,8 +41,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     alignItems: 'center',
     height: height * 0.1,
-    justifyContent: 'space-evenly',
-    flexDirection: 'row',
+    backgroundColor: 'gray',
   },
   fullName: {
     fontSize: 18,

@@ -6,7 +6,6 @@ import {Colors} from '../../theme/colors';
 import Avatar from './avatar';
 import {useNavigation} from '@react-navigation/native';
 import {CONTACTDETAIL} from '../../utils/routes';
-import {sizes} from '../../utils/contants';
 
 // create a component
 const ContackItem = ({item}) => {
@@ -16,7 +15,7 @@ const ContackItem = ({item}) => {
       onPress={() => navigation.navigate(CONTACTDETAIL, {contact: item})}
       style={styles.container}>
       <View style={styles.avatarContainer}>
-        <Avatar name={item.name} surname={item.surname} size={sizes.SMALL} />
+        <Avatar name={item.name} surname={item.surname} size="small" />
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.name}>

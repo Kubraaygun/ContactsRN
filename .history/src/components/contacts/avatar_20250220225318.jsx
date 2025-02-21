@@ -11,8 +11,8 @@ const Avatar = ({name, surname, size = sizes.MEDIUM}) => {
     switch (size) {
       case sizes.SMALL:
         return {
-          width: width * 0.15,
-          height: width * 0.15,
+          width: width * 0.1,
+          height: width * 0.1,
         };
       case sizes.MEDIUM:
         return {
