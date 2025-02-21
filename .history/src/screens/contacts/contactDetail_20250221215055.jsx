@@ -1,35 +1,20 @@
 //import liraries
-import React from 'react';
+import React, {Component} from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import Avatar from '../../components/contacts/avatar';
 import {convertFullName} from '../../utils/function';
-import {height, sizes} from '../../utils/contants';
+import {height, sizes, width} from '../../utils/contants';
 import {Colors} from '../../theme/colors';
 import CircleIconButton from '../../components/ui/circleIconButton';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {CALLING} from '../../utils/routes';
-import SQLite from 'react-native-sqlite-storage';
-
+import {CALLING, CONTACTS} from '../../utils/routes';
 const db = SQLite.openDatabase({
   name: 'ContactsDatabase',
 });
 // create a component
 const ContactDetail = ({route, navigation}) => {
   const {contact} = route.params;
-  const addNewContact = (name, surname, phone, email, adress, job) => {
-    db.transaction(txn => {
-      txn.executeSql(
-        'INSERT INTO resents (date, resent_id) VALUES (?,?)',
-        [date, resent_id],
-        (sqlTxn, res) => {
-          console.log('New contact inserted');
-          getContacts();
-        },
-        error => console.log('hata', error.message),
-      );
-    });
-  };
 
   return (
     <View style={defaultScreenStyle.container}>

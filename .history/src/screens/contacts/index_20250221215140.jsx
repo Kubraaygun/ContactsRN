@@ -22,12 +22,12 @@ const Contacts = () => {
     });
   };
 
-  const createResentsTable = () => {
+  const createContactsTable = () => {
     db.transaction(txn => {
       txn.executeSql(
-        'CREATE TABLE IF NOT EXISTS resents (id INTEGER PRIMARY KEY AUTOINCREMENT, date VARCHAR(100), resent_id  INTEGER )',
+        'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(100), surname VARCHAR(500), phone INTEGER, email VARCHAR(500), adress VARCHAR(500), job VARCHAR(500))',
         [],
-        (sqlTxn, res) => console.log('RESENT Table created'),
+        (sqlTxn, res) => console.log('Table created'),
         error => console.log('hata', error.message),
       );
     });
@@ -50,10 +50,12 @@ const Contacts = () => {
   const getContacts = () => {
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
+        console.log('gelen veri', res.rows.length);
         if (res.rows.length > 0) {
           let users = [];
           for (let i = 0; i < res.rows.length; i++) {
             let item = res.rows.item(i);
+            console.log(item);
             users.push(item);
           }
           setUsers(users);
@@ -66,7 +68,6 @@ const Contacts = () => {
 
   useEffect(() => {
     createContactsTable();
-    createResentsTable();
     getContacts();
   }, []);
   return (

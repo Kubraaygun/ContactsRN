@@ -54,6 +54,7 @@ const Contacts = () => {
           let users = [];
           for (let i = 0; i < res.rows.length; i++) {
             let item = res.rows.item(i);
+
             users.push(item);
           }
           setUsers(users);

@@ -20,8 +20,8 @@ const ContactDetail = ({route, navigation}) => {
   const addNewContact = (name, surname, phone, email, adress, job) => {
     db.transaction(txn => {
       txn.executeSql(
-        'INSERT INTO resents (date, resent_id) VALUES (?,?)',
-        [date, resent_id],
+        'INSERT INTO users (name, surname, phone, email, adress, job) VALUES (?,?,?,?,?,?)',
+        [name, surname, phone, email, adress, job],
         (sqlTxn, res) => {
           console.log('New contact inserted');
           getContacts();

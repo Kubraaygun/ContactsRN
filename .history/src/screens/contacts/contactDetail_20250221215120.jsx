@@ -17,19 +17,6 @@ const db = SQLite.openDatabase({
 // create a component
 const ContactDetail = ({route, navigation}) => {
   const {contact} = route.params;
-  const addNewContact = (name, surname, phone, email, adress, job) => {
-    db.transaction(txn => {
-      txn.executeSql(
-        'INSERT INTO resents (date, resent_id) VALUES (?,?)',
-        [date, resent_id],
-        (sqlTxn, res) => {
-          console.log('New contact inserted');
-          getContacts();
-        },
-        error => console.log('hata', error.message),
-      );
-    });
-  };
 
   return (
     <View style={defaultScreenStyle.container}>

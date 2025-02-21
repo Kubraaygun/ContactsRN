@@ -50,10 +50,12 @@ const Contacts = () => {
   const getContacts = () => {
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
+        console.log('gelen veri', res.rows.length);
         if (res.rows.length > 0) {
           let users = [];
           for (let i = 0; i < res.rows.length; i++) {
             let item = res.rows.item(i);
+            console.log(item);
             users.push(item);
           }
           setUsers(users);
