@@ -2,12 +2,14 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
-
+const db = SQLite.openDatabase({
+  name: 'ContactsDatabase',
+});
 // create a component
 const Resents = () => {
   return (
     <View style={defaultScreenStyle.container}>
-      <Text>MyComponent</Text>
+      <Text>resents</Text>
     </View>
   );
 };

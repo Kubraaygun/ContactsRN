@@ -1,6 +1,6 @@
 //import liraries
-import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import SQLite from 'react-native-sqlite-storage';
 
@@ -9,33 +9,25 @@ const db = SQLite.openDatabase({
 });
 // create a component
 const Resents = () => {
-  const [resents, setResents] = useState([]);
   const getResents = () => {
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM resents', [], (sqlTxn, res) => {
         if (res.rows.length > 0) {
-          let resents = [];
+          let users = [];
           for (let i = 0; i < res.rows.length; i++) {
             let item = res.rows.item(i);
-            resents.push(item);
+            users.push(item);
           }
-          setResents(resents);
+          setUsers(users);
         }
 
         error => console.log('hata', error.message);
       });
     });
   };
-  useEffect(() => {
-    getResents();
-  }, []);
-
   return (
     <View style={defaultScreenStyle.container}>
-      <FlatList
-        data={resents}
-        renderItem={({item}) => <Text>{item.resent_id}</Text>}
-      />
+      <Text>resents</Text>
     </View>
   );
 };

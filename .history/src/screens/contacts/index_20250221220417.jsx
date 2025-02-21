@@ -38,8 +38,9 @@ const Contacts = () => {
       txn.executeSql(
         'INSERT INTO users (name, surname, phone, email, adress, job) VALUES (?,?,?,?,?,?)',
         [name, surname, phone, email, adress, job],
-        (sqlTxn, res) => console.log('New contact inserted'),
-
+        (sqlTxn, res) => 
+          console.log('New contact inserted')
+        
         error => console.log('hata', error.message),
       );
     });

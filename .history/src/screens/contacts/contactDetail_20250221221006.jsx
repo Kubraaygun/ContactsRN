@@ -17,7 +17,7 @@ const db = SQLite.openDatabase({
 // create a component
 const ContactDetail = ({route, navigation}) => {
   const {contact} = route.params;
-  const addNewCall = (date, resent_id) => {
+  const addNewContact = (name, surname, phone, email, adress, job) => {
     db.transaction(txn => {
       txn.executeSql(
         'INSERT INTO resents (date, resent_id) VALUES (?,?)',
@@ -28,9 +28,7 @@ const ContactDetail = ({route, navigation}) => {
     });
   };
   const handleCall = () => {
-    const now = new Date();
-    const date = now.toDateString();
-    addNewCall(date, contact.id);
+    addNewCall();
     navigation.navigate(CALLING, {contact: contact});
   };
   return (

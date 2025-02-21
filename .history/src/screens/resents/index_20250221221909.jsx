@@ -34,7 +34,7 @@ const Resents = () => {
     <View style={defaultScreenStyle.container}>
       <FlatList
         data={resents}
-        renderItem={({item}) => <Text>{item.resent_id}</Text>}
+        renderItem={({item}) => <Text>{item.date}</Text>}
       />
     </View>
   );

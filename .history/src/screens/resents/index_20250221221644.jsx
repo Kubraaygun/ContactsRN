@@ -1,6 +1,6 @@
 //import liraries
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import SQLite from 'react-native-sqlite-storage';
 
@@ -17,7 +17,7 @@ const Resents = () => {
           let resents = [];
           for (let i = 0; i < res.rows.length; i++) {
             let item = res.rows.item(i);
-            resents.push(item);
+            users.push(item);
           }
           setResents(resents);
         }
@@ -32,10 +32,7 @@ const Resents = () => {
 
   return (
     <View style={defaultScreenStyle.container}>
-      <FlatList
-        data={resents}
-        renderItem={({item}) => <Text>{item.resent_id}</Text>}
-      />
+      <Text>resents</Text>
     </View>
   );
 };
