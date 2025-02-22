@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import Avatar from '../contacts/avatar';
 import {sizes} from '../../utils/contants';
+Colors;
 import {convertFullName} from '../../utils/function';
 import SQLite from 'react-native-sqlite-storage';
 import Icon from 'react-native-vector-icons/Ionicons';

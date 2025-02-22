@@ -3,10 +3,9 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import Avatar from '../contacts/avatar';
 import {sizes} from '../../utils/contants';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {convertFullName} from '../../utils/function';
 import SQLite from 'react-native-sqlite-storage';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {Colors} from '../../theme/colors';
 
 const db = SQLite.openDatabase({
   name: 'ContactsDatabase',
@@ -54,12 +53,11 @@ const ResentItem = ({item}) => {
         <Text style={styles.job}>{item?.date}</Text>
       </View>
 
-      <View style={styles.callTypeContainer}>
-        {item?.callType == 'incoming' ? (
-          <Icon name="add" size={26} color={Colors.RED} />
-        ) : (
-          <Icon name="add" size={26} color={Colors.GREEN} />
-        )}
+      <View style={styles.infoContainer}>
+        <Text style={styles.name}>
+          {user ? convertFullName(user?.name, user?.surname) : null}
+        </Text>
+        <Text style={styles.job}>{item?.date}</Text>
       </View>
     </Pressable>
   );
@@ -92,7 +90,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  callTypeContainer: {},
 });
 
 //make this component available to the app

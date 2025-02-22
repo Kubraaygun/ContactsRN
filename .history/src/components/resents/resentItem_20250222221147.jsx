@@ -3,10 +3,10 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import Avatar from '../contacts/avatar';
 import {sizes} from '../../utils/contants';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {convertFullName} from '../../utils/function';
 import SQLite from 'react-native-sqlite-storage';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Colors} from '../../theme/colors';
 
 const db = SQLite.openDatabase({
   name: 'ContactsDatabase',
@@ -58,7 +58,7 @@ const ResentItem = ({item}) => {
         {item?.callType == 'incoming' ? (
           <Icon name="add" size={26} color={Colors.RED} />
         ) : (
-          <Icon name="add" size={26} color={Colors.GREEN} />
+          <Icon name="chatbox-ellipses" size={26} color={Colors.GREEN} />
         )}
       </View>
     </Pressable>
