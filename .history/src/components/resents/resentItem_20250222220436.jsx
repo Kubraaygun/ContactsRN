@@ -38,19 +38,13 @@ const ResentItem = ({item}) => {
   return (
     <Pressable style={styles.container}>
       <View style={styles.avatarContainer}>
-        {user && (
-          <Avatar
-            name={user?.name}
-            surname={user?.surname}
-            size={sizes.SMALL}
-          />
-        )}
+        <Avatar name={user?.name} surname={user?.surname} size={sizes.SMALL} />
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.name}>
-          {user ? convertFullName(user?.name, user?.surname) : null}
+          {user?convertFullName(user?.name, user?.surname)}
         </Text>
-        <Text style={styles.job}>{user?.phone}</Text>
+        <Text style={styles.job}>{user?.job}</Text>
       </View>
     </Pressable>
   );

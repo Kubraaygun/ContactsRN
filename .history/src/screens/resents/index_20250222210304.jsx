@@ -33,10 +33,7 @@ const Resents = () => {
 
   return (
     <View style={defaultScreenStyle.container}>
-      <FlatList
-        data={resents}
-        renderItem={({item}) => <ResentItem item={item} />}
-      />
+      <FlatList data={resents} renderItem={({item}) => <ResentItem />} />
     </View>
   );
 };

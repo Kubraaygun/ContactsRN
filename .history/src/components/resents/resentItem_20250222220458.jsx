@@ -38,13 +38,7 @@ const ResentItem = ({item}) => {
   return (
     <Pressable style={styles.container}>
       <View style={styles.avatarContainer}>
-        {user && (
-          <Avatar
-            name={user?.name}
-            surname={user?.surname}
-            size={sizes.SMALL}
-          />
-        )}
+        <Avatar name={user?.name} surname={user?.surname} size={sizes.SMALL} />
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.name}>

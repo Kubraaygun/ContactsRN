@@ -23,9 +23,9 @@ const ResentItem = ({item}) => {
           if (res.rows.length > 0) {
             for (let i = 0; i < res.rows.length; i++) {
               let item = res.rows.item(i);
-              console.log(item.name);
               if (user) setUser(item);
             }
+            setResents(resents);
           }
         },
         error => console.log('hata', error.message),
@@ -38,19 +38,13 @@ const ResentItem = ({item}) => {
   return (
     <Pressable style={styles.container}>
       <View style={styles.avatarContainer}>
-        {user && (
-          <Avatar
-            name={user?.name}
-            surname={user?.surname}
-            size={sizes.SMALL}
-          />
-        )}
+        <Avatar name={item.name} surname={item.surname} size={sizes.SMALL} />
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.name}>
-          {user ? convertFullName(user?.name, user?.surname) : null}
+          {convertFullName(item.name, item.surname)}
         </Text>
-        <Text style={styles.job}>{user?.phone}</Text>
+        <Text style={styles.job}>{item.job}</Text>
       </View>
     </Pressable>
   );
