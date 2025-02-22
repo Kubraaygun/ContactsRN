@@ -17,11 +17,11 @@ const db = SQLite.openDatabase({
 // create a component
 const ContactDetail = ({route, navigation}) => {
   const {contact} = route.params;
-  const addNewCall = (date, resent_id, callType) => {
+  const addNewCall = (date, resent_id) => {
     db.transaction(txn => {
       txn.executeSql(
-        'INSERT INTO calls (date, resent_id, callType) VALUES (?,?,?)',
-        [date, resent_id, callType],
+        'INSERT INTO resents (date, resent_id, callType) VALUES (?,?,?)',
+        [date, resent_id],
         (sqlTxn, res) => console.log('Search Added'),
         error => console.log('hata', error.message),
       );
@@ -30,7 +30,7 @@ const ContactDetail = ({route, navigation}) => {
   const handleCall = () => {
     const now = new Date();
     const date = now.toDateString();
-    addNewCall(date, contact.id, 'outcoming');
+    addNewCall(date, contact.id);
     navigation.navigate(CALLING, {contact: contact});
   };
   return (

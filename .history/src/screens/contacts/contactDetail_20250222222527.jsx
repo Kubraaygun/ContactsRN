@@ -20,7 +20,7 @@ const ContactDetail = ({route, navigation}) => {
   const addNewCall = (date, resent_id, callType) => {
     db.transaction(txn => {
       txn.executeSql(
-        'INSERT INTO calls (date, resent_id, callType) VALUES (?,?,?)',
+        'INSERT INTO resents (date, resent_id, callType) VALUES (?,?,?)',
         [date, resent_id, callType],
         (sqlTxn, res) => console.log('Search Added'),
         error => console.log('hata', error.message),
@@ -30,7 +30,7 @@ const ContactDetail = ({route, navigation}) => {
   const handleCall = () => {
     const now = new Date();
     const date = now.toDateString();
-    addNewCall(date, contact.id, 'outcoming');
+    addNewCall(date, contact.id);
     navigation.navigate(CALLING, {contact: contact});
   };
   return (

@@ -27,7 +27,7 @@ const Contacts = () => {
       txn.executeSql(
         'CREATE TABLE IF NOT EXISTS calls (id INTEGER PRIMARY KEY AUTOINCREMENT, date VARCHAR(100), resent_id  INTEGER , callType VARCHAR(100))',
         [],
-        (sqlTxn, res) => console.log('Calls Table created'),
+        (sqlTxn, res) => console.log('RESENT Table created'),
         error => console.log('hata', error.message),
       );
     });

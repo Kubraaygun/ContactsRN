@@ -58,7 +58,7 @@ const ResentItem = ({item}) => {
         {item?.callType == 'incoming' ? (
           <Icon name="arrow-undo-outline" size={28} color={Colors.RED} />
         ) : (
-          <Icon name="arrow-redo-outline" size={28} color={Colors.GREEN} />
+          <Icon name="arrow-redo-sharp" size={28} color={Colors.GREEN} />
         )}
       </View>
     </Pressable>
@@ -92,9 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  callTypeContainer: {
-    marginHorizontal: 10,
-  },
+  callTypeContainer: {},
 });
 
 //make this component available to the app

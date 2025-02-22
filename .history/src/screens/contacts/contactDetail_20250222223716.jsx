@@ -30,7 +30,7 @@ const ContactDetail = ({route, navigation}) => {
   const handleCall = () => {
     const now = new Date();
     const date = now.toDateString();
-    addNewCall(date, contact.id, 'outcoming');
+    addNewCall(date, contact.id, 'incoming');
     navigation.navigate(CALLING, {contact: contact});
   };
   return (

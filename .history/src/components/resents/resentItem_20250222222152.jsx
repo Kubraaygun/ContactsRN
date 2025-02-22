@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   callTypeContainer: {
-    marginHorizontal: 10,
+    flex: 1,
   },
 });
 

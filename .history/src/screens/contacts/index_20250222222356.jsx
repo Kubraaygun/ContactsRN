@@ -25,9 +25,9 @@ const Contacts = () => {
   const createResentsTable = () => {
     db.transaction(txn => {
       txn.executeSql(
-        'CREATE TABLE IF NOT EXISTS calls (id INTEGER PRIMARY KEY AUTOINCREMENT, date VARCHAR(100), resent_id  INTEGER , callType VARCHAR(100))',
+        'CREATE TABLE IF NOT EXISTS resents (id INTEGER PRIMARY KEY AUTOINCREMENT, date VARCHAR(100), resent_id  INTEGER , callType date VARCHAR(100))',
         [],
-        (sqlTxn, res) => console.log('Calls Table created'),
+        (sqlTxn, res) => console.log('RESENT Table created'),
         error => console.log('hata', error.message),
       );
     });
@@ -76,12 +76,12 @@ const Contacts = () => {
       <TouchableOpacity
         onPress={() =>
           addNewContact(
-            'Serhat',
-            'Ustek',
-            '111111',
-            'serht@serht.com',
-            'Istanbul',
-            'Software Engineer',
+            'kubra',
+            'Yilmaz',
+            '5452524342424',
+            'yasin@yasin.com',
+            'Adana',
+            'softrawe Developer',
           )
         }
         style={{

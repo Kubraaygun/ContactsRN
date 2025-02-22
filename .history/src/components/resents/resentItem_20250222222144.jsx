@@ -92,9 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  callTypeContainer: {
-    marginHorizontal: 10,
-  },
+  callTypeContainer: {},
 });
 
 //make this component available to the app
