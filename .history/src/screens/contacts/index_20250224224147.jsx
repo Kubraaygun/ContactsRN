@@ -11,7 +11,7 @@ import Icon from '@react-native-vector-icons/evil-icons';
 import ContackItem from '../../components/contacts/contactItem';
 import {useDispatch, useSelector} from 'react-redux';
 import {Text} from '@ui-kitten/components';
-import {setContacts, setPending} from '../../store/slice/contactSlice';
+import {setContacts} from '../../store/slice/contactSlice';
 import {Colors} from '../../theme/colors';
 
 const db = SQLite.openDatabase({
@@ -56,7 +56,6 @@ const Contacts = () => {
   };
 
   const getContacts = () => {
-    dispatch(setPending(true));
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
         if (res.rows.length > 0) {
@@ -68,10 +67,7 @@ const Contacts = () => {
           dispatch(setContacts(users));
         }
 
-        error => {
-          console.log('hata', error.message);
-          dispatch(setPending(false));
-        };
+        error => console.log('hata', error.message);
       });
     });
   };

@@ -11,7 +11,6 @@ const contactSlice = createSlice({
   reducers: {
     setContacts: (state, action) => {
       state.contacts = action.payload;
-      state.pending = false;
     },
     setPending: (state, action) => {
       state.pending = action.payload;

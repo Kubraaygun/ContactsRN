@@ -68,10 +68,7 @@ const Contacts = () => {
           dispatch(setContacts(users));
         }
 
-        error => {
-          console.log('hata', error.message);
-          dispatch(setPending(false));
-        };
+        error => console.log('hata', error.message);
       });
     });
   };

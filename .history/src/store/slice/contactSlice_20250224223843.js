@@ -11,13 +11,9 @@ const contactSlice = createSlice({
   reducers: {
     setContacts: (state, action) => {
       state.contacts = action.payload;
-      state.pending = false;
-    },
-    setPending: (state, action) => {
-      state.pending = action.payload;
     },
   },
 });
 
-export const {setContacts, setPending} = contactSlice.actions;
+export const {setContacts} = contactSlice.actions;
 export default contactSlice.reducer;

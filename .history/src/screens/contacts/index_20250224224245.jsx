@@ -56,7 +56,7 @@ const Contacts = () => {
   };
 
   const getContacts = () => {
-    dispatch(setPending(true));
+    dispatch(setPending());
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
         if (res.rows.length > 0) {
@@ -68,10 +68,7 @@ const Contacts = () => {
           dispatch(setContacts(users));
         }
 
-        error => {
-          console.log('hata', error.message);
-          dispatch(setPending(false));
-        };
+        error => console.log('hata', error.message);
       });
     });
   };

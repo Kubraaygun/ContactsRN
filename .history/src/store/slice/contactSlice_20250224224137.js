@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   contacts: [],
-  pending: false,
+  pending: true,
 };
 
 const contactSlice = createSlice({
@@ -11,10 +11,9 @@ const contactSlice = createSlice({
   reducers: {
     setContacts: (state, action) => {
       state.contacts = action.payload;
-      state.pending = false;
     },
     setPending: (state, action) => {
-      state.pending = action.payload;
+      state.pending = true;
     },
   },
 });
