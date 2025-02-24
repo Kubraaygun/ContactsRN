@@ -5,7 +5,7 @@ import RootNavigator from './src/router/rootNavigator';
 import {Provider} from 'react-redux';
 import store from './src/store';
 import * as eva from '@eva-design/eva';
-import {ApplicationProvider} from '@ui-kitten/components';
+import {ApplicationProvider, Layout, Text} from '@ui-kitten/components';
 
 // create a component
 const App = () => {
