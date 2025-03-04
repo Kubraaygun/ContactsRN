@@ -115,7 +115,7 @@ const Contacts = () => {
           borderRadius: 50,
           padding: 20,
         }}>
-        <Icon name="add" size={30} color={'black'} />
+        <Icon1 name="plus" size={30} color={'black'} />
       </TouchableOpacity>
     </View>
   );
