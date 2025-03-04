@@ -14,7 +14,7 @@ const TabBarIcon = ({name, focused, size, color}) => {
     case CONTACTS:
       return <Icon name="person" size={size} color={color} />;
     default:
-      return <Icon name="star" size={size} color={color} />;
+      return <Icon name="start" size={size} color={color} />;
   }
 };
 

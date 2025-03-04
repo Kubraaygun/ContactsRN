@@ -7,7 +7,7 @@ import {
 import React, {useEffect, useState} from 'react';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import SQLite from 'react-native-sqlite-storage';
-import Icon1 from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Feather';
 import ContackItem from '../../components/contacts/contactItem';
 import {useDispatch, useSelector} from 'react-redux';
 import {Text} from '@ui-kitten/components';
@@ -115,7 +115,7 @@ const Contacts = () => {
           borderRadius: 50,
           padding: 20,
         }}>
-        <Icon1 name="plus" size={30} color={'black'} />
+        <Icon name="plus" />
       </TouchableOpacity>
     </View>
   );

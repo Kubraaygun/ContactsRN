@@ -24,6 +24,8 @@ export default function Tabnavigator() {
           headerRight: ({focused, size, color}) => (
             <TabBarIcon name={route.name} color={color} size={size} />
           ),
+          tabBarActiveTintColor: '#344CB7',
+          tabBarInactiveTintColor: '#7E99A3',
         })}
         name={CONTACTS}
         component={Contacts}

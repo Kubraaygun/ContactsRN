@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {CONTACTS, FAVORITES, RESENTS} from '../../utils/routes';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from '@react-native-vector-icons/evil-icons';
+import Icon1 from 'react-native-vector-icons/Ionicons';
 
 // create a component
 const TabBarIcon = ({name, focused, size, color}) => {
@@ -12,9 +13,9 @@ const TabBarIcon = ({name, focused, size, color}) => {
     case FAVORITES:
       return <Icon name="star" size={size} color={color} />;
     case CONTACTS:
-      return <Icon name="person" size={size} color={color} />;
+      return <Icon name="user" size={size} color={color} />;
     default:
-      return <Icon name="star" size={size} color={color} />;
+      return <Icon name="start" size={size} color={color} />;
   }
 };
 
