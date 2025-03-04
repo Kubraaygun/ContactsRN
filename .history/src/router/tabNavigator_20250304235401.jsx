@@ -22,7 +22,7 @@ export default function Tabnavigator() {
       <Tab.Screen
         Options={({route}) => ({
           headerRight: ({focused, size, color}) => (
-            <Icon name="add" size={size} color={color} />
+            <Icon1 name="add" size={size} color={color} />
           ),
         })}
         name={CONTACTS}

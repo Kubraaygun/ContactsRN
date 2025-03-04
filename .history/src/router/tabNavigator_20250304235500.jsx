@@ -21,9 +21,7 @@ export default function Tabnavigator() {
       <Tab.Screen name={RESENTS} component={Resents} />
       <Tab.Screen
         Options={({route}) => ({
-          headerRight: ({focused, size, color}) => (
-            <Icon name="add" size={size} color={color} />
-          ),
+          headerRight: ({focused, size, color}) => <Icon />,
         })}
         name={CONTACTS}
         component={Contacts}

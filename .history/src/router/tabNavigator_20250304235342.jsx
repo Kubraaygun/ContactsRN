@@ -3,7 +3,7 @@ import {CONTACTS, FAVORITES, RESENTS} from '../utils/routes';
 import Resents from '../screens/resents';
 import Contacts from '../screens/contacts';
 import Favorites from '../screens/favorites';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon1 from '@react-native-vector-icons/Ionicons';
 import TabBarIcon from '../components/router/tabBarIcon';
 
 const Tab = createBottomTabNavigator();
@@ -22,7 +22,7 @@ export default function Tabnavigator() {
       <Tab.Screen
         Options={({route}) => ({
           headerRight: ({focused, size, color}) => (
-            <Icon name="add" size={size} color={color} />
+            <Icon1 name="add" size={size} color={color} />
           ),
         })}
         name={CONTACTS}
