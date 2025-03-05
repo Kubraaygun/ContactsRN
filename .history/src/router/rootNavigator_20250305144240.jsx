@@ -28,7 +28,7 @@ export default function RootNavigator() {
         name={CALLING}
         component={Calling}
       />
-      <Stack.Screen name={ADDNEWCONTACT} component={AddContact} />
+      <Stack.Screen name={ADDNEWCONTACT} component={AddNewContact} />
     </Stack.Navigator>
   );
 }

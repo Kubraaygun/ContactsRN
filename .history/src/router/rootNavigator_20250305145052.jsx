@@ -27,7 +27,7 @@ export default function RootNavigator() {
         options={{headerShown: false}}
         name={CALLING}
         component={Calling}
-      />
+      />{' '}
       <Stack.Screen name={ADDNEWCONTACT} component={AddContact} />
     </Stack.Navigator>
   );

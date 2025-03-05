@@ -24,9 +24,8 @@ export default function Tabnavigator() {
       <Tab.Screen
         options={({navigation}) => ({
           headerRight: () => (
-            <Pressable
-              style={{marginRight: 15}}
-              onPress={() => navigation.navigate(ADDNEWCONTACT)}>
+            <Pressable style={{marginRight: 15}}>
+              onPress={() => navigation.navigate(ADDNEWCONTACT)}
               <Icon name="add" size={30} color={Colors.GREEN} />
             </Pressable>
           ),

@@ -9,7 +9,6 @@ import Tabnavigator from './tabNavigator';
 import ContactDetail from '../screens/contacts/contactDetail';
 import {Colors} from '../theme/colors';
 import Calling from '../screens/calling';
-import AddContact from '../screens/contacts/addContact';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,7 +27,11 @@ export default function RootNavigator() {
         name={CALLING}
         component={Calling}
       />
-      <Stack.Screen name={ADDNEWCONTACT} component={AddContact} />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={ADDNEWCONTACT}
+        component={Calling}
+      />
     </Stack.Navigator>
   );
 }

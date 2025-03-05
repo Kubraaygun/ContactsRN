@@ -28,7 +28,11 @@ export default function RootNavigator() {
         name={CALLING}
         component={Calling}
       />
-      <Stack.Screen name={ADDNEWCONTACT} component={AddContact} />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={ADDNEWCONTACT}
+        component={AddContact}
+      />
     </Stack.Navigator>
   );
 }
