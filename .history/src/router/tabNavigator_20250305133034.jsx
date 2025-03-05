@@ -22,9 +22,9 @@ export default function Tabnavigator() {
       })}>
       <Tab.Screen name={RESENTS} component={Resents} />
       <Tab.Screen
-        options={({navigation}) => ({
-          headerRight: () => (
-            <Pressable style={{marginRight: 15}}>
+        options={({route}) => ({
+          headerRight: ({focused, size, color}) => (
+            <Pressable>
               <Icon name="add" size={30} color={Colors.GREEN} />
             </Pressable>
           ),

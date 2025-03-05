@@ -6,7 +6,6 @@ import Favorites from '../screens/favorites';
 import Icon from 'react-native-vector-icons/Ionicons';
 import TabBarIcon from '../components/router/tabBarIcon';
 import {Colors} from '../theme/colors';
-import {Pressable} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,18 +14,16 @@ export default function Tabnavigator() {
     <Tab.Navigator
       screenOptions={({route}) => ({
         tabBarIcon: ({focused, size, color}) => (
-          <TabBarIcon name={route.name} color={color} size={size} />
+          <TabBarIcon name={route.name} color={Colors.GREEN} size={size} />
         ),
         tabBarActiveTintColor: '#344CB7',
         tabBarInactiveTintColor: '#7E99A3',
       })}>
       <Tab.Screen name={RESENTS} component={Resents} />
       <Tab.Screen
-        options={({navigation}) => ({
-          headerRight: () => (
-            <Pressable style={{marginRight: 15}}>
-              <Icon name="add" size={30} color={Colors.GREEN} />
-            </Pressable>
+        options={({route}) => ({
+          headerRight: ({focused, size, color}) => (
+            <Icon name="add" size={size} color={color} />
           ),
         })}
         name={CONTACTS}

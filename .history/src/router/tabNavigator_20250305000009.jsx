@@ -5,8 +5,6 @@ import Contacts from '../screens/contacts';
 import Favorites from '../screens/favorites';
 import Icon from 'react-native-vector-icons/Ionicons';
 import TabBarIcon from '../components/router/tabBarIcon';
-import {Colors} from '../theme/colors';
-import {Pressable} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,11 +20,9 @@ export default function Tabnavigator() {
       })}>
       <Tab.Screen name={RESENTS} component={Resents} />
       <Tab.Screen
-        options={({navigation}) => ({
-          headerRight: () => (
-            <Pressable style={{marginRight: 15}}>
-              <Icon name="add" size={30} color={Colors.GREEN} />
-            </Pressable>
+        options={({route}) => ({
+          headerRight: ({focused, size, color}) => (
+            <Icon name="add" size={size} color={color} />
           ),
         })}
         name={CONTACTS}
