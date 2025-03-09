@@ -77,9 +77,7 @@ const AddContact = () => {
                 value={values.job}
               />
 
-              <Button style={styles.button} onPress={handleSubmit}>
-                Save
-              </Button>
+              <Button onPress={handleSubmit}>Save</Button>
             </View>
           )}
         </Formik>
@@ -98,9 +96,6 @@ const styles = StyleSheet.create({
   },
   input: {
     marginVertical: 10,
-  },
-  button: {
-    marginVertical: 30,
   },
 });
 

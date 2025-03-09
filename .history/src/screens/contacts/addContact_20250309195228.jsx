@@ -1,7 +1,7 @@
 //import liraries
 import React from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
-import {Input, Button} from '@ui-kitten/components';
+import {View, StyleSheet, ScrollView, TextInput, Button} from 'react-native';
+import {Input} from '@ui-kitten/components';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import {Formik} from 'formik';
 
@@ -77,9 +77,7 @@ const AddContact = () => {
                 value={values.job}
               />
 
-              <Button style={styles.button} onPress={handleSubmit}>
-                Save
-              </Button>
+              <Button onPress={handleSubmit}>Save</Button>
             </View>
           )}
         </Formik>
@@ -98,9 +96,6 @@ const styles = StyleSheet.create({
   },
   input: {
     marginVertical: 10,
-  },
-  button: {
-    marginVertical: 30,
   },
 });
 
