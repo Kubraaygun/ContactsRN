@@ -70,11 +70,11 @@ const AddContact = () => {
               <Input
                 style={styles.input}
                 size="medium"
-                placeholder="Job"
-                label="Job"
-                onChangeText={handleChange('job')}
-                onBlur={handleBlur('job')}
-                value={values.job}
+                placeholder="Name"
+                label="Name"
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
               />
 
               <Button onPress={handleSubmit} title="Submit" />

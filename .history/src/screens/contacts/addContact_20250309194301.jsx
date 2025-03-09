@@ -43,8 +43,8 @@ const AddContact = () => {
               <Input
                 style={styles.input}
                 size="medium"
-                placeholder="Email"
-                label="Email"
+                placeholder="Name"
+                label="Name"
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values.email}
@@ -52,29 +52,29 @@ const AddContact = () => {
               <Input
                 style={styles.input}
                 size="medium"
-                placeholder="Phone"
-                label="Phone"
-                onChangeText={handleChange('phone')}
-                onBlur={handleBlur('phone')}
-                value={values.phone}
+                placeholder="Name"
+                label="Name"
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
               />
               <Input
                 style={styles.input}
                 size="medium"
-                placeholder="Adress"
-                label="Adress"
-                onChangeText={handleChange('adress')}
-                onBlur={handleBlur('adress')}
-                value={values.adress}
+                placeholder="Name"
+                label="Name"
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
               />
               <Input
                 style={styles.input}
                 size="medium"
-                placeholder="Job"
-                label="Job"
-                onChangeText={handleChange('job')}
-                onBlur={handleBlur('job')}
-                value={values.job}
+                placeholder="Name"
+                label="Name"
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
               />
 
               <Button onPress={handleSubmit} title="Submit" />

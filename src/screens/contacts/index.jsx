@@ -96,27 +96,6 @@ const Contacts = () => {
           renderItem={({item}) => <ContackItem item={item} />}
         />
       )}
-      <TouchableOpacity
-        onPress={() =>
-          addNewContact(
-            'Serhat',
-            'Ustek',
-            '111111',
-            'serht@serht.com',
-            'Istanbul',
-            'Software Engineer',
-          )
-        }
-        style={{
-          position: 'absolute',
-          right: 20,
-          bottom: 20,
-          backgroundColor: 'green',
-          borderRadius: 50,
-          padding: 20,
-        }}>
-        <Icon name="add" size={30} color={'black'} />
-      </TouchableOpacity>
     </View>
   );
 };

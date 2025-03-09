@@ -72,9 +72,9 @@ const AddContact = () => {
                 size="medium"
                 placeholder="Job"
                 label="Job"
-                onChangeText={handleChange('job')}
-                onBlur={handleBlur('job')}
-                value={values.job}
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
               />
 
               <Button onPress={handleSubmit} title="Submit" />
