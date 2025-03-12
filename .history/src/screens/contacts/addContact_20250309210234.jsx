@@ -5,67 +5,23 @@ import {Input, Button} from '@ui-kitten/components';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import {Formik} from 'formik';
 import {newContactSchema} from '../../utils/schema';
-import SQLite from 'react-native-sqlite-storage';
-import {setContacts, setPending} from '../../store/slice/contactSlice';
-import {useDispatch, useSelector} from 'react-redux';
-const db = SQLite.openDatabase({
-  name: 'ContactsDatabase',
-});
+
 // create a component
 const AddContact = () => {
-  const addNewContact = values => {
-    const getContacts = () => {
-      dispatch(setPending(true));
-      db.transaction(txn => {
-        txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
-          if (res.rows.length > 0) {
-            let users = [];
-            for (let i = 0; i < res.rows.length; i++) {
-              let item = res.rows.item(i);
-              users.push(item);
-            }
-            dispatch(setContacts(users));
-          }
-
-          error => {
-            console.log('hata', error.message);
-            dispatch(setPending(false));
-          };
-        });
-      });
-    };
-    db.transaction(txn => {
-      txn.executeSql(
-        'INSERT INTO users (name, surname, phone, email, adress, job) VALUES (?,?,?,?,?,?)',
-        [
-          values.name,
-          values.surname,
-          values.phone,
-          values.email,
-          values.adress,
-          values.job,
-        ],
-        (sqlTxn, res) => console.log('New contact inserted'),
-
-        error => console.log('hata', error.message),
-      );
-    });
-  };
-
   return (
     <View style={defaultScreenStyle.container}>
       <ScrollView>
         <Formik
           initialValues={{
-            name: 'mahmut',
+            name: 'aahmet',
             surname: 'kara',
             email: 'sada@asdad',
-            phone: '3424242342424',
+            phone: '342424',
             adress: 'fdsf sfsdsff',
             job: 'sdfsdf',
           }}
           validationSchema={newContactSchema}
-          onSubmit={values => addNewContact(values)}>
+          onSubmit={values => console.log(values)}>
           {({handleChange, handleBlur, handleSubmit, values, errors}) => (
             <View>
               <Input

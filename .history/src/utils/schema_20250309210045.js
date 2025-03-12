@@ -14,7 +14,7 @@ const newContactSchema = Yup.object().shape({
     .min(11, 'Too Short!')
     .max(20, 'Too Long!')
     .required('Required'),
-  adress: Yup.string()
+  address: Yup.string()
     .min(5, 'Too Short!')
     .max(20, 'Too Long!')
     .required('Required'),
