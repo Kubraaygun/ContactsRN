@@ -33,9 +33,7 @@ export default function RootNavigator() {
             <View style={{flexDirection: 'row'}}>
               <Pressable
                 style={{marginRight: 10}}
-                onPress={() =>
-                  dispatch(deleteContact(route.params.contact.id))
-                }>
+                onPress={() => dispatch(deleteContact(route.params.id))}>
                 <Icon name="trash" size={25} color={Colors.RED} />
               </Pressable>
               <Pressable

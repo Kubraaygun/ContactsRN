@@ -21,8 +21,8 @@ const contactSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(deleteContact.pending, state => {})
-      .addCase(deleteContact.fulfilled, state => {})
-      .addCase(deleteContact.rejected, state => {});
+      .addCase(deleteContact.pending, state => {})
+      .addCase(deleteContact.pending, state => {});
   },
 });
 

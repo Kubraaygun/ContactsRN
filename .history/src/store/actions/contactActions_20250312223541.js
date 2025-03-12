@@ -13,7 +13,6 @@ const deleteContact = createAsyncThunk(
           `DELETE FROM users WHERE id=${contact_id}`,
           [],
           (sqlTxn, res) => {
-            console.log('Silme Basarili');
             if (res.rows.length > 0) {
               for (let i = 0; i < res.rows.length; i++) {
                 let item = res.rows.item(i);

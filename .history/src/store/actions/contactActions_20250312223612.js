@@ -21,10 +21,11 @@ const deleteContact = createAsyncThunk(
               }
             }
 
-            error => {
-              console.log('hata', error.message);
-            };
-          },
+           
+          }
+          error => {
+            console.log('hata', error.message);
+          };
         );
       });
     } catch (error) {}

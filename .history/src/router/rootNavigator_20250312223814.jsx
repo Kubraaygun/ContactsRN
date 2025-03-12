@@ -12,13 +12,10 @@ import Calling from '../screens/calling';
 import AddContact from '../screens/contacts/addContact';
 import {Pressable, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useDispatch} from 'react-redux';
-import {deleteContact} from '../store/actions/contactActions';
 
 const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
-  const dispatch = useDispatch();
   return (
     <Stack.Navigator
       screenOptions={{headerBackTitle: 'Back', headerTintColor: Colors.BLACK}}>
@@ -33,9 +30,7 @@ export default function RootNavigator() {
             <View style={{flexDirection: 'row'}}>
               <Pressable
                 style={{marginRight: 10}}
-                onPress={() =>
-                  dispatch(deleteContact(route.params.contact.id))
-                }>
+                onPress={() => console.log(route.params)}>
                 <Icon name="trash" size={25} color={Colors.RED} />
               </Pressable>
               <Pressable

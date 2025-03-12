@@ -11,7 +11,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {CALLING} from '../../utils/routes';
 import SQLite from 'react-native-sqlite-storage';
 import {setContacts} from '../../store/slice/contactSlice';
-import {useDispatch} from 'react-redux';
 
 const db = SQLite.openDatabase({
   name: 'ContactsDatabase',
@@ -36,7 +35,6 @@ const ContactDetail = ({route, navigation}) => {
     navigation.navigate(CALLING, {contact: contact});
   };
   const getContacts = () => {
-    const dispatch = useDispatch();
     dispatch(setPending(true));
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
