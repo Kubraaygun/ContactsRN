@@ -29,12 +29,12 @@ export default function RootNavigator() {
           headerRight: () => (
             <View style={{flexDirection: 'row'}}>
               <Pressable
-                style={{marginRight: 10}}
+                style={{marginRight: 15}}
                 onPress={() => navigation.navigate(ADDNEWCONTACT)}>
                 <Icon name="trash" size={25} color={Colors.RED} />
               </Pressable>
               <Pressable
-                style={{marginRight: 5}}
+                style={{marginRight: 15}}
                 onPress={() => navigation.navigate(ADDNEWCONTACT)}>
                 <Icon name="pencil" size={25} color={Colors.BLUE} />
               </Pressable>

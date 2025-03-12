@@ -10,8 +10,6 @@ import ContactDetail from '../screens/contacts/contactDetail';
 import {Colors} from '../theme/colors';
 import Calling from '../screens/calling';
 import AddContact from '../screens/contacts/addContact';
-import {Pressable, View} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,18 +25,11 @@ export default function RootNavigator() {
       <Stack.Screen
         options={({navigation}) => ({
           headerRight: () => (
-            <View style={{flexDirection: 'row'}}>
-              <Pressable
-                style={{marginRight: 10}}
-                onPress={() => navigation.navigate(ADDNEWCONTACT)}>
-                <Icon name="trash" size={25} color={Colors.RED} />
-              </Pressable>
-              <Pressable
-                style={{marginRight: 5}}
-                onPress={() => navigation.navigate(ADDNEWCONTACT)}>
-                <Icon name="pencil" size={25} color={Colors.BLUE} />
-              </Pressable>
-            </View>
+            <Pressable
+              style={{marginRight: 15}}
+              onPress={() => navigation.navigate(ADDNEWCONTACT)}>
+              <Icon name="add" size={30} color={Colors.GREEN} />
+            </Pressable>
           ),
         })}
         name={CONTACTDETAIL}

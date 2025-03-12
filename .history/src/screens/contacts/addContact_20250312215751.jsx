@@ -47,7 +47,7 @@ const AddContact = () => {
           values.job,
         ],
         (sqlTxn, res) => console.log('New contact inserted'),
-
+        getContacts(),
         error => console.log('hata', error.message),
       );
     });

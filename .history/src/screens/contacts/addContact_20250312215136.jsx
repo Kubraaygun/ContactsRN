@@ -14,27 +14,33 @@ const db = SQLite.openDatabase({
 // create a component
 const AddContact = () => {
   const dispatch = useDispatch();
-  const getContacts = () => {
-    dispatch(setPending(true));
-    db.transaction(txn => {
-      txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
-        if (res.rows.length > 0) {
-          let users = [];
-          for (let i = 0; i < res.rows.length; i++) {
-            let item = res.rows.item(i);
-            users.push(item);
-          }
-          dispatch(setContacts(users));
-        }
-
-        error => {
-          console.log('hata', error.message);
-          dispatch(setPending(false));
-        };
-      });
-    });
-  };
   const addNewContact = values => {
+    const getContacts = () => {
+      dispatch(setPending(true));
+      db.transaction(txn => {
+        txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
+          if (res.rows.length > 0) {
+            let users = [];
+            for (let i = 0; i < res.rows.length; i++) {
+              let item = res.rows.item(i);
+              users.push(item);
+            }
+            dispatch(setContacts(users));
+          }
+
+          error => {
+            console.log('hata', error.message);
+            dispatch(setPending(false));
+          };
+        });
+      });
+    };
+
+    useEffect(() => {
+      return () => {
+        getContacts();
+      };
+    }, []);
     db.transaction(txn => {
       txn.executeSql(
         'INSERT INTO users (name, surname, phone, email, adress, job) VALUES (?,?,?,?,?,?)',
@@ -53,11 +59,6 @@ const AddContact = () => {
     });
   };
 
-  useEffect(() => {
-    return () => {
-      getContacts();
-    };
-  }, []);
   return (
     <View style={defaultScreenStyle.container}>
       <ScrollView>
