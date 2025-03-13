@@ -19,7 +19,6 @@ const db = SQLite.openDatabase({
 // create a component
 const ContactDetail = ({route, navigation}) => {
   const {contact} = route.params;
-  const dispatch = useDispatch();
   const addNewCall = (date, resent_id, callType) => {
     db.transaction(txn => {
       txn.executeSql(

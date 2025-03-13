@@ -10,7 +10,7 @@ import CircleIconButton from '../../components/ui/circleIconButton';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CALLING} from '../../utils/routes';
 import SQLite from 'react-native-sqlite-storage';
-import {setContacts, setPending} from '../../store/slice/contactSlice';
+import {setContacts} from '../../store/slice/contactSlice';
 import {useDispatch} from 'react-redux';
 
 const db = SQLite.openDatabase({
@@ -19,7 +19,6 @@ const db = SQLite.openDatabase({
 // create a component
 const ContactDetail = ({route, navigation}) => {
   const {contact} = route.params;
-  const dispatch = useDispatch();
   const addNewCall = (date, resent_id, callType) => {
     db.transaction(txn => {
       txn.executeSql(
@@ -37,6 +36,7 @@ const ContactDetail = ({route, navigation}) => {
     navigation.navigate(CALLING, {contact: contact});
   };
   const getContacts = () => {
+    const dispatch = useDispatch();
     dispatch(setPending(true));
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {

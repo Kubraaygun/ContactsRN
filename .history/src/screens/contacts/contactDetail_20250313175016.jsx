@@ -19,7 +19,6 @@ const db = SQLite.openDatabase({
 // create a component
 const ContactDetail = ({route, navigation}) => {
   const {contact} = route.params;
-  const dispatch = useDispatch();
   const addNewCall = (date, resent_id, callType) => {
     db.transaction(txn => {
       txn.executeSql(
@@ -37,6 +36,7 @@ const ContactDetail = ({route, navigation}) => {
     navigation.navigate(CALLING, {contact: contact});
   };
   const getContacts = () => {
+    const dispatch = useDispatch();
     dispatch(setPending(true));
     db.transaction(txn => {
       txn.executeSql('SELECT * FROM users', [], (sqlTxn, res) => {
