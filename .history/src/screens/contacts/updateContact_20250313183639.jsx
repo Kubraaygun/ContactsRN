@@ -39,7 +39,7 @@ const UpdateContact = ({route}) => {
   const updateContact = values => {
     db.transaction(txn => {
       txn.executeSql(
-        `UPDATE users SET name=?, surname=?, phone=?, email=?, adress=?, job=?WHERE id=${contact.id}`,
+        `UPDATE users SET name=?, surname=?, phone=?, email=?, adress=?, job WHERE id=${values.id}`,
         [
           values.name,
           values.surname,

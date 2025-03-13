@@ -39,7 +39,7 @@ const UpdateContact = ({route}) => {
   const updateContact = values => {
     db.transaction(txn => {
       txn.executeSql(
-        `UPDATE users SET name=?, surname=?, phone=?, email=?, adress=?, job=?WHERE id=${contact.id}`,
+        `UPDATE INTO users (name, surname, phone, email, adress, job) SET VALUES (?,?,?,?,?,? WHERE id= ${values.id}`,
         [
           values.name,
           values.surname,
@@ -48,7 +48,7 @@ const UpdateContact = ({route}) => {
           values.adress,
           values.job,
         ],
-        (sqlTxn, res) => console.log('Update People'),
+        (sqlTxn, res) => console.log('New contact inserted'),
 
         error => console.log('hata', error.message),
       );
