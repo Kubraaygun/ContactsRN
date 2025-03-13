@@ -55,7 +55,7 @@ const Contacts = () => {
           }
           dispatch(setContacts(users));
         }
-        dispatch(setPending(false));
+        dispatch(setPending(true));
 
         error => {
           console.log('hata', error.message);
