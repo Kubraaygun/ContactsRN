@@ -42,11 +42,7 @@ export default function RootNavigator() {
               </Pressable>
               <Pressable
                 style={{marginRight: 5}}
-                onPress={() =>
-                  navigation.navigate(UPDATECONTACT, {
-                    contact: route.params.contact,
-                  })
-                }>
+                onPress={() => navigation.navigate(UPDATECONTACT, {contact})}>
                 <Icon name="pencil" size={25} color={Colors.BLUE} />
               </Pressable>
             </View>

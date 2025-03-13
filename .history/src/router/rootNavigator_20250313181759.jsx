@@ -4,7 +4,6 @@ import {
   CALLING,
   CONTACTDETAIL,
   TABBAVIGATOR,
-  UPDATECONTACT,
 } from '../utils/routes';
 import Tabnavigator from './tabNavigator';
 import ContactDetail from '../screens/contacts/contactDetail';
@@ -15,7 +14,6 @@ import {Pressable, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useDispatch} from 'react-redux';
 import {deleteContact} from '../store/actions/contactActions';
-import UpdateContact from '../screens/contacts/updateContact';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,11 +40,7 @@ export default function RootNavigator() {
               </Pressable>
               <Pressable
                 style={{marginRight: 5}}
-                onPress={() =>
-                  navigation.navigate(UPDATECONTACT, {
-                    contact: route.params.contact,
-                  })
-                }>
+                onPress={() => navigation.navigate(ADDNEWCONTACT)}>
                 <Icon name="pencil" size={25} color={Colors.BLUE} />
               </Pressable>
             </View>
@@ -61,7 +55,7 @@ export default function RootNavigator() {
         component={Calling}
       />
       <Stack.Screen name={ADDNEWCONTACT} component={AddContact} />
-      <Stack.Screen name={UPDATECONTACT} component={UpdateContact} />
+      <Stack.Screen name={ADDNEWCONTACT} component={AddContact} />
     </Stack.Navigator>
   );
 }
