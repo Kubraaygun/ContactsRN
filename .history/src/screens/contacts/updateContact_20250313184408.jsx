@@ -146,7 +146,7 @@ const UpdateContact = ({route, navigation}) => {
               />
 
               <Button style={styles.button} onPress={handleSubmit}>
-                Update
+                Save
               </Button>
             </View>
           )}

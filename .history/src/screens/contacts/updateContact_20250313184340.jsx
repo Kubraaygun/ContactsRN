@@ -60,6 +60,7 @@ const UpdateContact = ({route, navigation}) => {
   useEffect(() => {
     return () => {
       getContacts();
+      navigation.reset(TABBAVIGATOR);
     };
   }, []);
   return (
@@ -146,7 +147,7 @@ const UpdateContact = ({route, navigation}) => {
               />
 
               <Button style={styles.button} onPress={handleSubmit}>
-                Update
+                Save
               </Button>
             </View>
           )}

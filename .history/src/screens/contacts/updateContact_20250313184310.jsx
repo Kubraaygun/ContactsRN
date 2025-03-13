@@ -9,7 +9,6 @@ import SQLite from 'react-native-sqlite-storage';
 import {setContacts, setPending} from '../../store/slice/contactSlice';
 import {useDispatch, useSelector} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
-import {TABBAVIGATOR} from '../../utils/routes';
 
 const db = SQLite.openDatabase({
   name: 'ContactsDatabase',
@@ -60,6 +59,7 @@ const UpdateContact = ({route, navigation}) => {
   useEffect(() => {
     return () => {
       getContacts();
+      navigation.reset();
     };
   }, []);
   return (
@@ -146,7 +146,7 @@ const UpdateContact = ({route, navigation}) => {
               />
 
               <Button style={styles.button} onPress={handleSubmit}>
-                Update
+                Save
               </Button>
             </View>
           )}
